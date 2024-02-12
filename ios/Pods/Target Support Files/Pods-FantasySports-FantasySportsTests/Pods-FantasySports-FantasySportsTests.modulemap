@@ -1,0 +1,6 @@
+module Pods_FantasySports_FantasySportsTests {
+  umbrella header "Pods-FantasySports-FantasySportsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
