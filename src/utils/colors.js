@@ -42,10 +42,10 @@ export const DARK_THEME = {
   green: "green",
   wishlist_text: '#c4c4c4',
 
-}
+} 
 
 export default {
-  primary_blue: '#2e70eb',
+  primary_blue: '#90EE90',
   secondary_blue: "#5c4af9",
   text_primary: '#404040',
   primary_yellow: '#efb932',
