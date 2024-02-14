@@ -586,17 +586,17 @@ const PlayerSelection = (props) => {
             </View>
 
             <View style={{ flexDirection: 'row', paddingHorizontal: scale(20), marginTop: verticalScale(15), width: scale(360) }}>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 1 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 2 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 3 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 4 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 5 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 6 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 7 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 8 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 9 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 10 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
-                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount == 11 ? colors.green : '#f5f7fb', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 1 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 2 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 3 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 4 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 5 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 6 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 7 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 8 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 9 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount >= 10 ? colors.green : 'green', marginRight: scale(5) }} ></View>
+                <View style={{ width: scale(28), height: verticalScale(10), borderRadius: verticalScale(2), backgroundColor: playercount == 11 ? colors.green : 'green', marginRight: scale(5) }} ></View>
 
 
             </View>
@@ -604,20 +604,20 @@ const PlayerSelection = (props) => {
             <View style={{ marginTop: verticalScale(10), backgroundColor: colors.white, borderTopLeftRadius: verticalScale(10), borderTopRightRadius: verticalScale(10) }}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: verticalScale(30), elevation: 1, backgroundColor: colors.white, paddingHorizontal: scale(30) }}>
 
-                    <TouchableOpacity onPress={() => { setkeeperTab(true), setbatsmanTab(false), setbowlerTab(false), setAllrounderTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: KeeperTab ? colors.primary_blue : 'white', height: verticalScale(30) }} >
-                        <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: KeeperTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(14), marginTop: verticalScale(4) }} >WK({Keepercount})</Text>
+                    <TouchableOpacity onPress={() => { setkeeperTab(true), setbatsmanTab(false), setbowlerTab(false), setAllrounderTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: KeeperTab ? colors.green: 'white', height: verticalScale(30) }} >
+                        <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: KeeperTab ? colors.green : colors.greyColour, fontSize: scaleFont(14), marginTop: verticalScale(4) }} >WK({Keepercount})</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => { setkeeperTab(false), setbatsmanTab(true), setbowlerTab(false), setAllrounderTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: batsmanTab ? colors.primary_blue : 'white', height: verticalScale(30) }} >
-                        <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: batsmanTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(14), marginTop: verticalScale(4) }} >BAT({batsmancount})</Text>
+                    <TouchableOpacity onPress={() => { setkeeperTab(false), setbatsmanTab(true), setbowlerTab(false), setAllrounderTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: batsmanTab ? colors.green : 'white', height: verticalScale(30) }} >
+                        <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: batsmanTab ? colors.green : colors.greyColour, fontSize: scaleFont(14), marginTop: verticalScale(4) }} >BAT({batsmancount})</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => { setkeeperTab(false), setbatsmanTab(false), setbowlerTab(true), setAllrounderTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: bowlerTab ? colors.primary_blue : 'white', height: verticalScale(30) }} >
-                        <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: bowlerTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(14), marginTop: verticalScale(4) }} >BOWL({bowlercount})</Text>
+                    <TouchableOpacity onPress={() => { setkeeperTab(false), setbatsmanTab(false), setbowlerTab(true), setAllrounderTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: bowlerTab ? colors.green : 'white', height: verticalScale(30) }} >
+                        <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: bowlerTab ? colors.green : colors.greyColour, fontSize: scaleFont(14), marginTop: verticalScale(4) }} >BOWL({bowlercount})</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity onPress={() => { setkeeperTab(false), setbatsmanTab(false), setbowlerTab(false), setAllrounderTab(true) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: AllrounderTab ? colors.primary_blue : 'white', height: verticalScale(30) }} >
-                        <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: AllrounderTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(14), marginTop: verticalScale(4) }} >AR({Allroundercount})</Text>
+                    <TouchableOpacity onPress={() => { setkeeperTab(false), setbatsmanTab(false), setbowlerTab(false), setAllrounderTab(true) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: AllrounderTab ? colors.green : 'white', height: verticalScale(30) }} >
+                        <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: AllrounderTab ? colors.green : colors.greyColour, fontSize: scaleFont(14), marginTop: verticalScale(4) }} >AR({Allroundercount})</Text>
                     </TouchableOpacity>
 
                 </View>
@@ -696,13 +696,13 @@ const PlayerSelection = (props) => {
             }
 
 
-            <View style={{ position: 'absolute', bottom: 0, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.primary_blue, borderTopLeftRadius: verticalScale(20), borderTopRightRadius: verticalScale(20), height: verticalScale(100), width: scale(360), alignSelf: 'center', flexDirection: 'row', alignItems: 'center', justifyContent: "space-evenly" }}>
+            <View style={{ position: 'absolute', bottom: 0, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.green, borderTopLeftRadius: verticalScale(20), borderTopRightRadius: verticalScale(20), height: verticalScale(100), width: scale(360), alignSelf: 'center', flexDirection: 'row', alignItems: 'center', justifyContent: "space-evenly" }}>
 
-                <TouchableOpacity onPress={() => props.navigation.navigate("TeamPreview", { playerList: playerList, bowlerCount: bowlercount, batsmanCount: batsmancount, allRounderCount: Allroundercount, })} style={{ height: verticalScale(50), width: scale(160), borderWidth: 1, justifyContent: 'center', alignItems: 'center', borderColor: colors.primary_blue, backgroundColor: colors.white, borderRadius: verticalScale(6) }}>
-                    <Text style={{ color: colors.primary_blue, fontFamily: constants.OPENSANS_FONT_MEDIUM, fontSize: scaleFont(14) }} >Team Preview</Text>
+                <TouchableOpacity onPress={() => props.navigation.navigate("TeamPreview", { playerList: playerList, bowlerCount: bowlercount, batsmanCount: batsmancount, allRounderCount: Allroundercount, })} style={{ height: verticalScale(50), width: scale(160), borderWidth: 1, justifyContent: 'center', alignItems: 'center', borderColor: colors.green, backgroundColor: colors.white, borderRadius: verticalScale(6) }}>
+                    <Text style={{ color: colors.green, fontFamily: constants.OPENSANS_FONT_MEDIUM, fontSize: scaleFont(14) }} >Team Preview</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => props.navigation.navigate("CaptainSelect", { playerList: playerList, bowlerCount: bowlercount, batsmanCount: batsmancount, allRounderCount: Allroundercount, keeperCount: Keepercount, team1: team1count, team2: team2count })} style={{ height: verticalScale(50), width: scale(160), justifyContent: 'center', alignItems: 'center', backgroundColor: playercount === 11 ? colors.white : '#dee5ed', borderRadius: verticalScale(6), borderWidth: playercount === 11 ? 1 : 0, borderColor: colors.primary_blue }}>
+                <TouchableOpacity onPress={() => props.navigation.navigate("CaptainSelect", { playerList: playerList, bowlerCount: bowlercount, batsmanCount: batsmancount, allRounderCount: Allroundercount, keeperCount: Keepercount, team1: team1count, team2: team2count })} style={{ height: verticalScale(50), width: scale(160), justifyContent: 'center', alignItems: 'center', backgroundColor: playercount === 11 ? colors.green : 'green', borderRadius: verticalScale(6), borderWidth: playercount === 11 ? 1 : 0, borderColor: colors.green }}>
                     <Text style={{ color: playercount === 11 ? colors.primary_blue : colors.white, fontFamily: constants.OPENSANS_FONT_MEDIUM, fontSize: scaleFont(14) }} >Continue</Text>
                 </TouchableOpacity>
 
