@@ -9,7 +9,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 const FollowUsScreen = (props) => {
 
     const [name, setName] = useState('Daya Chitanis')
-    const [email, setEmail] = useState('chitadata23@hotmail.com')
+    const [email, setEmail] = useState('JohnDoe@email,com')
     const [message, setMessage] = useState('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s')
 
 
@@ -19,13 +19,13 @@ const FollowUsScreen = (props) => {
                 <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
                 />
                 <ScrollView>
-                    <LinearGradient
-                        start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                        colors={[colors.secondary_blue, colors.primary_blue]}
+                    <View
+                       
                         style={{
                             width: scale(360),
                             height: verticalScale(240),
                             alignSelf: 'center',
+                            backgroundColor:colors.green
                         }}><View style={{ justifyContent: "center", paddingTop: verticalScale(40) }}>
                             <TouchableOpacity onPress={() => props.navigation.goBack()} style={{ marginLeft: scale(20) }}>
                                 <MaterialCommunityIcons
@@ -36,7 +36,7 @@ const FollowUsScreen = (props) => {
                             </TouchableOpacity>
                             <Image style={{ height: verticalScale(220), width: scale(250), alignSelf: "center", position: "absolute", top: verticalScale(45) }} source={require("../../assets/images/bike.png")} />
                         </View>
-                    </LinearGradient>
+                    </View>
 
                     <View style={{ backgroundColor: colors.white, width: scale(300), height: verticalScale(350), borderRadius: verticalScale(12), alignSelf: "center", elevation: 10, marginTop: verticalScale(-30), padding: verticalScale(10) }}>
                         <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_BOLD, fontSize: scaleFont(20), textAlign: "center" }}>GET IN TOUCH!</Text>
@@ -66,7 +66,7 @@ const FollowUsScreen = (props) => {
                             activeUnderlineColor={colors.secondary_blue}
                         />
 
-                        <TouchableOpacity style={{ backgroundColor: colors.secondary_blue, borderRadius: verticalScale(30), width: scale(40), height: scale(40), justifyContent: "center", alignItems: "center", alignSelf: "center", marginTop: verticalScale(10) }}>
+                        <TouchableOpacity style={{ backgroundColor: colors.green, borderRadius: verticalScale(30), width: scale(40), height: scale(40), justifyContent: "center", alignItems: "center", alignSelf: "center", marginTop: verticalScale(10) }}>
                             <FontAwesome name="send" color={colors.white} size={verticalScale(18)} />
                         </TouchableOpacity>
                     </View>
