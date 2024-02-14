@@ -33,10 +33,8 @@ const Support = (props) => {
             <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
             />
 
-            <LinearGradient
-                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                colors={[colors.secondary_blue, colors.primary_blue]}
-                style={{ width: scale(365), height: verticalScale(80), alignSelf: 'center', }}>
+            <View
+                style={{ width: scale(365), height: verticalScale(80), alignSelf: 'center',backgroundColor:colors.green }}>
                 <View style={{ alignSelf: 'center', width: scale(365), marginTop: verticalScale(40), flexDirection: 'row', alignItems: 'center', }}>
                     <TouchableOpacity style={{ width: scale(150), paddingHorizontal: scale(20), }} onPress={() => { props.navigation.goBack() }} >
                         <MaterialCommunityIcons
@@ -47,7 +45,7 @@ const Support = (props) => {
                     </TouchableOpacity>
                     <Text style={{ fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(18), color: colors.white }}>Support</Text>
                 </View>
-            </LinearGradient>
+            </View>
 
             <View style={{ marginTop: verticalScale(30), justifyContent: 'center', width: scale(320), alignSelf: 'center' }}>
 
@@ -55,7 +53,7 @@ const Support = (props) => {
                     <FontAwesome5
                         name="trophy"
                         size={verticalScale(120)}
-                        color={colors.primary_blue}
+                        color={colors.green}
                     />
                 </View>
 
@@ -64,23 +62,23 @@ const Support = (props) => {
                 <View style={{ flexDirection: 'row', width: scale(280), justifyContent: 'space-between', alignSelf: 'center', marginTop: verticalScale(10) }}>
                     <TouchableOpacity
                         onPress={() => onPressMobileNumberClick()}
-                        style={{ flexDirection: 'row', borderColor: colors.primary_blue, borderWidth: verticalScale(2), borderRadius: verticalScale(30), width: scale(120), height: verticalScale(40), alignItems: 'center', justifyContent: 'center' }}>
+                        style={{ flexDirection: 'row', borderColor: colors.green, borderWidth: verticalScale(2), borderRadius: verticalScale(30), width: scale(120), height: verticalScale(40), alignItems: 'center', justifyContent: 'center' }}>
                         <Icon
                             name="call"
                             size={verticalScale(16)}
-                            color={colors.primary_blue}
+                            color={colors.green}
                         />
-                        <Text style={{ fontSize: scaleFont(16), color: colors.primary_blue, marginLeft: scale(10) }}>Call us</Text>
+                        <Text style={{ fontSize: scaleFont(16), color: colors.green, marginLeft: scale(10) }}>Call us</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         onPress={() => Linking.openURL(email)}
-                        style={{ flexDirection: 'row', borderColor: colors.primary_blue, borderWidth: verticalScale(2), borderRadius: verticalScale(30), width: scale(120), height: verticalScale(40), alignItems: 'center', justifyContent: 'center' }}>
+                        style={{ flexDirection: 'row', borderColor: colors.green, borderWidth: verticalScale(2), borderRadius: verticalScale(30), width: scale(120), height: verticalScale(40), alignItems: 'center', justifyContent: 'center' }}>
                         <Icon
                             name="md-mail-outline"
                             size={verticalScale(16)}
-                            color={colors.primary_blue}
+                            color={colors.green}
                         />
-                        <Text style={{ fontSize: scaleFont(16), color: colors.primary_blue, marginLeft: scale(10) }}>Mail us</Text>
+                        <Text style={{ fontSize: scaleFont(16), color: colors.green, marginLeft: scale(10) }}>Mail us</Text>
                     </TouchableOpacity>
                 </View>
 

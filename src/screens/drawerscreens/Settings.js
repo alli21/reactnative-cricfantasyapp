@@ -52,13 +52,12 @@ const Settings = (props) => {
             <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
             />
 
-            <LinearGradient
-                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                colors={[colors.secondary_blue, colors.primary_blue]}
+            <View
                 style={{
                     width: scale(365),
                     height: verticalScale(80),
                     alignSelf: 'center',
+                    backgroundColor:colors.green
                 }}>
                 <View style={{ alignSelf: 'center', width: scale(365), marginTop: verticalScale(40), flexDirection: 'row', alignItems: 'center', }}>
                     <TouchableOpacity style={{ width: scale(150), paddingHorizontal: scale(20), }} onPress={() => { props.navigation.goBack() }} >
@@ -70,12 +69,12 @@ const Settings = (props) => {
                     </TouchableOpacity>
                     <Text style={{ fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(18), color: colors.white }}>Settings</Text>
                 </View>
-            </LinearGradient>
+            </View>
 
 
             <View style={{ width: scale(340), alignSelf: 'center', backgroundColor: theme.colors.background_primary, paddingVertical: verticalScale(20), paddingHorizontal: scale(10), borderRadius: verticalScale(6) }}>
 
-                <Text style={{ fontSize: scaleFont(12), color: colors.secondary_blue, fontFamily: constants.OPENSANS_FONT_BOLD }}>Preferred App Language</Text>
+                <Text style={{ fontSize: scaleFont(12), color: colors.green, fontFamily: constants.OPENSANS_FONT_BOLD }}>Preferred App Language</Text>
                 <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', height: verticalScale(40), justifyContent: 'space-between', alignItems: 'center', backgroundColor: theme.colors.background_primary, paddingEnd: scale(20) }} onPress={() => toggleExpand1()}>
                     <Text style={{ fontSize: scaleFont(14), color: theme.colors.text_primary, }}>{lang}</Text>
                     <FontAwesome name={expanded1 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} color={colors.secondary_blue} />
@@ -101,7 +100,7 @@ const Settings = (props) => {
 
 
 
-                <Text style={{ fontSize: scaleFont(12), color: colors.secondary_blue, fontFamily: constants.OPENSANS_FONT_BOLD }}>Privacy Settings</Text>
+                <Text style={{ fontSize: scaleFont(12), color: colors.green, fontFamily: constants.OPENSANS_FONT_BOLD }}>Privacy Settings</Text>
                 <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', height: verticalScale(40), justifyContent: 'space-between', alignItems: 'center', backgroundColor: theme.colors.background_primary, paddingEnd: scale(20) }} onPress={() => toggleExpand2()}>
                     <Text style={{ fontSize: scaleFont(14), color: theme.colors.text_primary, }}>{download}</Text>
                     <FontAwesome name={expanded2 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} color={colors.secondary_blue} />
@@ -127,7 +126,7 @@ const Settings = (props) => {
 
 
 
-                <Text style={{ fontSize: scaleFont(12), color: colors.secondary_blue, fontFamily: constants.OPENSANS_FONT_BOLD }}>Make Me Discoverable</Text>
+                <Text style={{ fontSize: scaleFont(12), color: colors.green, fontFamily: constants.OPENSANS_FONT_BOLD }}>Make Me Discoverable</Text>
                 <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', height: verticalScale(40), justifyContent: 'space-between', alignItems: 'center', backgroundColor: theme.colors.background_primary, paddingEnd: scale(20) }} onPress={() => toggleExpand3()}>
                     <Text style={{ fontSize: scaleFont(14), color: theme.colors.text_primary, }}>{quality}</Text>
                     <FontAwesome name={expanded3 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} color={colors.secondary_blue} />

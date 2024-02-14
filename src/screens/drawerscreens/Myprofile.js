@@ -50,13 +50,13 @@ const MyProfile = (props) => {
             <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
             />
 
-            <LinearGradient
-                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                colors={[colors.secondary_blue, colors.primary_blue]}
+            <View
+               
                 style={{
                     width: scale(370),
                     height: verticalScale(250),
                     alignSelf: 'center',
+                    backgroundColor:colors.green
                 }}>
                 <View style={{ marginTop: verticalScale(40), paddingHorizontal: scale(20), alignItems: 'center', justifyContent: 'center' }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: scale(10), width: scale(340) }}>
@@ -90,25 +90,25 @@ const MyProfile = (props) => {
                     </TouchableOpacity>
 
                 </View>
-            </LinearGradient>
+            </View>
 
             <View style={{ flex: 1, marginTop: verticalScale(-10), backgroundColor: "#f5f7fb", borderTopLeftRadius: verticalScale(14), borderTopRightRadius: verticalScale(14) }}>
 
                 <Text style={{ marginTop: verticalScale(20), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(16), color: colors.black, marginLeft: scale(20) }}>Playing Stats</Text>
                 <View style={{ marginTop: verticalScale(20), flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: scale(340), alignSelf: 'center' }} >
                     <TouchableOpacity style={{ elevation: 1, width: scale(100), height: verticalScale(150), justifyContent: 'center', alignItems: 'center', backgroundColor: colors.white, borderRadius: verticalScale(6) }}>
-                        <FontAwesome name="group" color={colors.primary_blue} size={verticalScale(30)} />
+                        <FontAwesome name="group" color={colors.green} size={verticalScale(30)} />
                         <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_BOLD, fontSize: scaleFont(20), marginTop: verticalScale(15) }}>560</Text>
                         <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12), width: scale(60), textAlign: 'center', marginTop: verticalScale(5) }}>Total Contests</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{ elevation: 1, width: scale(100), height: verticalScale(150), justifyContent: 'center', alignItems: 'center', backgroundColor: colors.white, borderRadius: verticalScale(6) }}>
-                        <MaterialCommunityIcons name="volleyball" color={colors.primary_blue} size={verticalScale(30)} />
+                        <MaterialCommunityIcons name="volleyball" color={colors.green} size={verticalScale(30)} />
                         <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_BOLD, fontSize: scaleFont(20), marginTop: verticalScale(12) }}>100</Text>
                         <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12), width: scale(60), textAlign: 'center', marginTop: verticalScale(5) }}>Total Matches</Text>
 
                     </TouchableOpacity>
                     <TouchableOpacity style={{ elevation: 1, width: scale(100), height: verticalScale(150), justifyContent: 'center', alignItems: 'center', backgroundColor: colors.white, borderRadius: verticalScale(6) }}>
-                        <FontAwesome name="trophy" color={colors.primary_blue} size={verticalScale(30)} />
+                        <FontAwesome name="trophy" color={colors.green} size={verticalScale(30)} />
                         <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_BOLD, fontSize: scaleFont(20), marginTop: verticalScale(15) }}>350</Text>
                         <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12), width: scale(60), textAlign: 'center', marginTop: verticalScale(5) }}>Win Contests</Text>
 
@@ -122,7 +122,7 @@ const MyProfile = (props) => {
                         <Text style={{ width: scale(80), color: colors.black, fontSize: scaleFont(12), fontFamily: constants.OPENSANS_FONT_MEDIUM, marginLeft: scale(30) }}>
                             Email</Text>
                         <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, marginLeft: scale(10) }}>
-                            cricfantasy11@email.com</Text>
+                            CricStar11@email.com</Text>
                     </View>
                     <View style={{ flexDirection: 'row', alignItems: 'center', }}>
                         <Text style={{ width: scale(80), color: colors.black, fontSize: scaleFont(12), fontFamily: constants.OPENSANS_FONT_MEDIUM, marginLeft: scale(30) }}>
@@ -134,7 +134,7 @@ const MyProfile = (props) => {
                         <Text style={{ width: scale(80), color: colors.black, fontSize: scaleFont(12), fontFamily: constants.OPENSANS_FONT_MEDIUM, marginLeft: scale(30) }}>
                             Team Name</Text>
                         <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, marginLeft: scale(10) }}>
-                            CricFantasy11</Text>
+                            CricStar11</Text>
                     </View>
                 </View>
             </View>

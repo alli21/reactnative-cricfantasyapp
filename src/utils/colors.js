@@ -1,4 +1,4 @@
-// import React from "react"
+/ import React from "react"
 // // import { useSelector } from 'react-redux';
 // import Store from "../redux/store"
 // import { switchMode } from "../redux/actions";
@@ -39,13 +39,13 @@ export const DARK_THEME = {
   black: '#000000',
   greyColour: '#868686',
   primary_red: "#D22B2B",
-  green: "green",
+  green: "rgba(0, 128, 0, 1) ",
   wishlist_text: '#c4c4c4',
 
 }
 
 export default {
-  primary_blue: '#2e70eb',
+  primary_blue: '#90EE90',
   secondary_blue: "#5c4af9",
   text_primary: '#404040',
   primary_yellow: '#efb932',
@@ -55,6 +55,6 @@ export default {
   black: '#000000',
   greyColour: '#868686',
   primary_red: "#D22B2B",
-  green: "green",
+  green: "rgba(0, 128, 0, 1)",
   wishlist_text: '#c4c4c4',
 }
