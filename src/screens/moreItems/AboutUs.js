@@ -12,10 +12,8 @@ const AboutUs = (props) => {
             <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
             />
 
-            <LinearGradient
-                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                colors={[colors.secondary_blue, colors.primary_blue]}
-                style={{ width: scale(365), height: verticalScale(80), alignSelf: 'center', }}>
+            <View
+              style={{ width: scale(365), height: verticalScale(80), alignSelf: 'center',backgroundColor:colors.green }}>
                 <View style={{ alignSelf: 'center', width: scale(365), marginTop: verticalScale(40), flexDirection: 'row', alignItems: 'center', }}>
                     <TouchableOpacity style={{ width: scale(140), paddingHorizontal: scale(20), }} onPress={() => { props.navigation.goBack() }} >
                         <MaterialCommunityIcons
@@ -26,7 +24,7 @@ const AboutUs = (props) => {
                     </TouchableOpacity>
                     <Text style={{ fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(18), color: colors.white }}>About Us</Text>
                 </View>
-            </LinearGradient>
+            </View>
 
 
             <View style={{ justifyContent: 'center', width: scale(320), alignSelf: 'center', flex: 1, }}>
@@ -36,7 +34,7 @@ const AboutUs = (props) => {
                         <FontAwesome5
                             name="trophy"
                             size={verticalScale(120)}
-                            color={colors.primary_blue}
+                            color={colors.green}
                         />
                     </View>
 
