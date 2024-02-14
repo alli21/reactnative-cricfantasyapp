@@ -5,6 +5,7 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 
+
 const LoginScreen = (props) => {
 
     const [phoneNumber, sethoneNumber] = useState();
@@ -37,7 +38,7 @@ const LoginScreen = (props) => {
                                 color={colors.white}
                             />
 
-                            <Text style={{ color: colors.white, fontFamily: constants.OPENSANS_FONT_EXTRA_BOLD, fontSize: scaleFont(40) }}>NeoSport</Text>
+                            <Text style={{ color: colors.white, fontFamily: constants.OPENSANS_FONT_EXTRA_BOLD, fontSize: scaleFont(40) }}>Stars Cric</Text>
                             <Text style={{ color: colors.white, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12), opacity: 0.5 }}>World's Leading Fantasy Sports App</Text>
                         </View>
 
@@ -62,12 +63,12 @@ const LoginScreen = (props) => {
                             <Text style={{ alignSelf: 'center', color: colors.white, fontSize: scaleFont(14), marginTop: verticalScale(14), fontFamily: constants.OPENSANS_FONT_MEDIUM }}>or</Text>
 
                             <TouchableOpacity onPress={() => props.navigation.navigate('Signin')} style={{ backgroundColor: colors.primary_blue, height: verticalScale(50), width: scale(340), alignSelf: 'center', borderRadius: verticalScale(6), marginTop: verticalScale(14), justifyContent: 'center', alignItems: 'center' }}>
-                                <Text style={{ color: colors.white, fontSize: scaleFont(16), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Sign in using Email/Mobile</Text>
+                                <Text style={{ color: colors.black, fontSize: scaleFont(16), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Sign in using Email/Mobile</Text>
                             </TouchableOpacity>
 
                             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                 <Text style={{ alignSelf: 'center', color: colors.white, fontSize: scaleFont(12), marginTop: verticalScale(14), fontFamily: constants.OPENSANS_FONT_MEDIUM }}>New User? </Text>
-                                <TouchableOpacity onPress={() => props.navigation.navigate("SignupScreen")} style={{ justifyContent: 'center', alignItems: "center", marginTop: verticalScale(12) }} ><Text style={{ alignSelf: 'center', color: colors.primary_blue, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_MEDIUM, }}>Create an Account </Text></TouchableOpacity>
+                                <TouchableOpacity onPress={() => props.navigation.navigate("SignupScreen")} style={{ justifyContent: 'center', alignItems: "center", marginTop: verticalScale(12) }} ><Text style={{ alignSelf: 'center', color: colors.white, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_MEDIUM, }}>Create an Account </Text></TouchableOpacity>
                             </View>
 
                         </View>
