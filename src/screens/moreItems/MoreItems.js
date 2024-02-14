@@ -113,25 +113,25 @@ const MoreItems = (props) => {
                 )}
 
 
-                <LinearGradient
-                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                    colors={[colors.secondary_blue, colors.primary_blue]}
+                <View
+                 
                     style={{
                         width: scale(360),
                         height: verticalScale(80),
                         alignSelf: 'center',
+                        backgroundColor:colors.green
                     }}>
                     <View style={{ alignSelf: 'center', marginTop: verticalScale(40) }}>
                         <Text style={{ fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(20), color: colors.white }}>More Items</Text>
 
                     </View>
-                </LinearGradient>
+                </View>
 
 
                 <View style={{ marginLeft: scale(10), }}>
 
                     <TouchableOpacity onPress={() => props.navigation.navigate('NotificationScreen')} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                        <MaterialIcons name="notifications-none" color={colors.primary_blue} size={verticalScale(24)} />
+                        <MaterialIcons name="notifications-none" color={colors.green} size={verticalScale(24)} />
                         <View style={{ flexDirection: 'row', borderBottomWidth: verticalScale(0.25), borderColor: colors.greyColour, width: scale(320), justifyContent: "space-between", alignItems: 'center', paddingHorizontal: scale(10), height: verticalScale(50), }}>
                             <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Notifications</Text>
                             <FontAwesome name="angle-right" color={colors.black} size={verticalScale(18)} />
@@ -139,7 +139,7 @@ const MoreItems = (props) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => { props.navigation.navigate('AboutUs') }} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                        <MaterialIcons name="info-outline" color={colors.primary_blue} size={verticalScale(24)} />
+                        <MaterialIcons name="info-outline" color={colors.green} size={verticalScale(24)} />
                         <View style={{ flexDirection: 'row', borderBottomWidth: verticalScale(0.25), borderColor: colors.greyColour, width: scale(320), justifyContent: "space-between", alignItems: 'center', paddingHorizontal: scale(10), height: verticalScale(50), }}>
                             <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>About us</Text>
                             <FontAwesome name="angle-right" color={colors.black} size={verticalScale(18)} />
@@ -148,7 +148,7 @@ const MoreItems = (props) => {
 
 
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                        <MaterialCommunityIcons name="file-powerpoint-box-outline" color={colors.primary_blue} size={verticalScale(24)} />
+                        <MaterialCommunityIcons name="file-powerpoint-box-outline" color={colors.green} size={verticalScale(24)} />
                         <View style={{ flexDirection: 'row', borderBottomWidth: verticalScale(0.25), borderColor: colors.greyColour, width: scale(320), justifyContent: "space-between", alignItems: 'center', paddingHorizontal: scale(10), height: verticalScale(50), }}>
                             <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Fantasy Points System</Text>
                             <FontAwesome name="angle-right" color={colors.black} size={verticalScale(18)} />
@@ -157,7 +157,7 @@ const MoreItems = (props) => {
 
 
                     <TouchableOpacity onPress={() => { props.navigation.navigate('TermsAndConditions') }} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                        <MaterialCommunityIcons name="text-box-multiple-outline" color={colors.primary_blue} size={verticalScale(24)} />
+                        <MaterialCommunityIcons name="text-box-multiple-outline" color={colors.green} size={verticalScale(24)} />
                         <View style={{ flexDirection: 'row', borderBottomWidth: verticalScale(0.25), borderColor: colors.greyColour, width: scale(320), justifyContent: "space-between", alignItems: 'center', paddingHorizontal: scale(10), height: verticalScale(50), }}>
                             <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Terms & Conditions</Text>
                             <FontAwesome name="angle-right" color={colors.black} size={verticalScale(18)} />
@@ -165,7 +165,7 @@ const MoreItems = (props) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => shareFunction(shareMessage)} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                        <MaterialCommunityIcons name="share-outline" color={colors.primary_blue} size={verticalScale(24)} />
+                        <MaterialCommunityIcons name="share-outline" color={colors.green} size={verticalScale(24)} />
                         <View style={{ flexDirection: 'row', borderBottomWidth: verticalScale(0.25), borderColor: colors.greyColour, width: scale(320), justifyContent: "space-between", alignItems: 'center', paddingHorizontal: scale(10), height: verticalScale(50), }}>
                             <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Share App</Text>
                             <FontAwesome name="angle-right" color={colors.black} size={verticalScale(18)} />
@@ -174,7 +174,7 @@ const MoreItems = (props) => {
 
 
                     <TouchableOpacity onPress={() => { props.navigation.navigate('PrivacyPolicy') }} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                        <MaterialCommunityIcons name="shield-check-outline" color={colors.primary_blue} size={verticalScale(24)} />
+                        <MaterialCommunityIcons name="shield-check-outline" color={colors.green} size={verticalScale(24)} />
                         <View style={{ flexDirection: 'row', borderBottomWidth: verticalScale(0.25), borderColor: colors.greyColour, width: scale(320), justifyContent: "space-between", alignItems: 'center', paddingHorizontal: scale(10), height: verticalScale(50), }}>
                             <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Privacy Policy</Text>
                             <FontAwesome name="angle-right" color={colors.black} size={verticalScale(18)} />
@@ -182,7 +182,7 @@ const MoreItems = (props) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={() => handlelogout()} style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
-                        <MaterialCommunityIcons name="logout" color={colors.primary_blue} size={verticalScale(24)} />
+                        <MaterialCommunityIcons name="logout" color={colors.green} size={verticalScale(24)} />
                         <View style={{ flexDirection: 'row', borderBottomWidth: verticalScale(0.25), borderColor: colors.greyColour, width: scale(320), justifyContent: "space-between", alignItems: 'center', paddingHorizontal: scale(10), height: verticalScale(50), }}>
                             <Text style={{ color: colors.black, fontSize: scaleFont(14), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Logout</Text>
                             <FontAwesome name="angle-right" color={colors.black} size={verticalScale(18)} />
