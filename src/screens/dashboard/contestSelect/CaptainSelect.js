@@ -89,14 +89,14 @@ const CaptainSelect = (props) => {
             </View>
 
 
-            <LinearGradient
-                start={{ x: 1, y: 0.3 }} end={{ x: 1, y: 1 }}
-                colors={[colors.secondary_blue, colors.primary_blue]}
+            <View
+              
                 style={{
                     width: scale(360),
                     height: verticalScale(80),
                     alignSelf: 'center',
-                    justifyContent: 'center', alignItems: 'center'
+                    justifyContent: 'center', alignItems: 'center',
+                    backgroundColor:colors.green
                 }}>
                 <View style={{ paddingHorizontal: scale(20), alignItems: 'center', }}>
                     <Text style={{ fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(16), color: colors.white }} >Choose your captain and vice captain</Text>
@@ -112,7 +112,7 @@ const CaptainSelect = (props) => {
 
                     </View>
                 </View>
-            </LinearGradient>
+            </View>
             <View style={{ flexDirection: 'row', backgroundColor: colors.white, elevation: 1, height: verticalScale(30), width: scale(360), alignSelf: 'center', }}>
                 <View style={{ height: verticalScale(30), width: scale(206), justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ color: colors.black, fontSize: scaleFont(10), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>
@@ -183,13 +183,13 @@ const CaptainSelect = (props) => {
             </View> */}
 
 
-            <View style={{ position: 'absolute', bottom: 0, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.primary_blue, borderTopLeftRadius: verticalScale(20), borderTopRightRadius: verticalScale(20), height: verticalScale(100), width: scale(360), alignSelf: 'center', flexDirection: 'row', alignItems: 'center', justifyContent: "space-evenly" }}>
+            <View style={{ position: 'absolute', bottom: 0, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.green, borderTopLeftRadius: verticalScale(20), borderTopRightRadius: verticalScale(20), height: verticalScale(100), width: scale(360), alignSelf: 'center', flexDirection: 'row', alignItems: 'center', justifyContent: "space-evenly" }}>
 
-                <TouchableOpacity onPress={() => props.navigation.navigate("TeamPreview", { playerList: playerList, bowlerCount: bowlerCount, batsmanCount: batsmanCount, allRounderCount: allRounderCount, })} style={{ height: verticalScale(50), width: scale(160), borderWidth: 1, justifyContent: 'center', alignItems: 'center', borderColor: colors.primary_blue, backgroundColor: colors.white, borderRadius: verticalScale(6) }}>
-                    <Text style={{ color: colors.primary_blue, fontFamily: constants.OPENSANS_FONT_MEDIUM, fontSize: scaleFont(14) }} >Team Preview</Text>
+                <TouchableOpacity onPress={() => props.navigation.navigate("TeamPreview", { playerList: playerList, bowlerCount: bowlerCount, batsmanCount: batsmanCount, allRounderCount: allRounderCount, })} style={{ height: verticalScale(50), width: scale(160), borderWidth: 1, justifyContent: 'center', alignItems: 'center', borderColor: colors.green, backgroundColor: colors.white, borderRadius: verticalScale(6) }}>
+                    <Text style={{ color: colors.green, fontFamily: constants.OPENSANS_FONT_MEDIUM, fontSize: scaleFont(14) }} >Team Preview</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => props.navigation.navigate("TeamsList", { playerList: playerList, bowlerCount: bowlerCount, batsmanCount: batsmanCount, allRounderCount: allRounderCount, keeperCount: keeperCount, team1: team1, team2: team2 })} style={{ height: verticalScale(50), width: scale(160), justifyContent: 'center', alignItems: 'center', backgroundColor: captainSelected && viceCaptainSelected ? colors.primary_blue : '#dee5ed', borderRadius: verticalScale(6), borderWidth: captainSelected && viceCaptainSelected ? 1 : 0, borderColor: colors.primary_blue }}>
+                <TouchableOpacity onPress={() => props.navigation.navigate("TeamsList", { playerList: playerList, bowlerCount: bowlerCount, batsmanCount: batsmanCount, allRounderCount: allRounderCount, keeperCount: keeperCount, team1: team1, team2: team2 })} style={{ height: verticalScale(50), width: scale(160), justifyContent: 'center', alignItems: 'center', backgroundColor: captainSelected && viceCaptainSelected ? colors.green : 'green', borderRadius: verticalScale(6), borderWidth: captainSelected && viceCaptainSelected ? 1 : 0, borderColor: colors.primary_blue }}>
                     <Text style={{ color: colors.white, fontFamily: constants.OPENSANS_FONT_MEDIUM, fontSize: scaleFont(14) }} >Save Team</Text>
                 </TouchableOpacity>
 
