@@ -132,10 +132,10 @@ const TeamsList = (props) => {
 
 
             </View>
-            <View style={{ position: 'absolute', bottom: 0, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.primary_blue, borderTopLeftRadius: verticalScale(20), borderTopRightRadius: verticalScale(20), height: verticalScale(100), width: scale(360), alignSelf: 'center', flexDirection: 'row', alignItems: 'center', justifyContent: "space-evenly" }}>
+            <View style={{ position: 'absolute', bottom: 0, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.green, borderTopLeftRadius: verticalScale(20), borderTopRightRadius: verticalScale(20), height: verticalScale(100), width: scale(360), alignSelf: 'center', flexDirection: 'row', alignItems: 'center', justifyContent: "space-evenly" }}>
 
 
-                <TouchableOpacity onPress={() => props.navigation.navigate("Playerselection")} style={{ height: verticalScale(50), width: scale(320), justifyContent: 'center', alignItems: 'center', backgroundColor: colors.primary_blue, borderRadius: verticalScale(6), borderWidth: 0, borderColor: colors.primary_blue }}>
+                <TouchableOpacity onPress={() => props.navigation.navigate("Playerselection")} style={{ height: verticalScale(50), width: scale(320), justifyContent: 'center', alignItems: 'center', backgroundColor: colors.green, borderRadius: verticalScale(6), borderWidth: 0, borderColor: colors.green }}>
                     <Text style={{ color: colors.white, fontFamily: constants.OPENSANS_FONT_MEDIUM, fontSize: scaleFont(14) }} >Create New Team</Text>
                 </TouchableOpacity>
 
