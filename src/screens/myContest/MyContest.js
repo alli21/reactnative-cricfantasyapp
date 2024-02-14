@@ -32,56 +32,40 @@ const MyContest = (props) => {
                 <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
                 />
 
-                <LinearGradient
-                    start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                    colors={[colors.secondary_blue, colors.primary_blue]}
-                    style={{
-                        width: scale(360),
-                        height: verticalScale(80),
-                        alignSelf: 'center',
-                    }}>
+               <View
+                
+                style={{
+                    width: scale(360),
+                    height: verticalScale(80),
+                    alignSelf: 'center',
+                    backgroundColor:colors.green
+                }}>
                     <View style={{ marginTop: verticalScale(35), flexDirection: 'row', paddingHorizontal: scale(20), alignItems: 'center' }}>
                         <TouchableOpacity onPress={() => navigation.openDrawer()}  >
                             <Image source={require("../../assets/images/avatar1.jpeg")} style={{ width: verticalScale(30), height: verticalScale(30), borderRadius: verticalScale(100), resizeMode: "stretch" }} />
 
                         </TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center', width: scale(270), justifyContent: 'center' }}>
-                            <Image style={{ height: verticalScale(35), width: verticalScale(29), }} source={require("../../assets/images/Logodash.png")} />
-
+                        <Icon
+                        name="trophy"
+                        size={verticalScale(20)}
+                        color={colors.white}
+                    />
+                    <Text style={{ color: colors.white, fontFamily: constants.OPENSANS_FONT_BOLD, fontSize: scaleFont(18), marginLeft: scale(10) }}>Stars Cric</Text>
                         </View>
                         <Ionicon name="notifications-outline" color='white' size={verticalScale(22)} />
                     </View>
-                </LinearGradient>
+                </View>
 
 
                 <View style={{ backgroundColor: theme.colors.white, borderTopLeftRadius: verticalScale(10), borderTopRightRadius: verticalScale(10) }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly', height: verticalScale(65), elevation: 1 }}>
 
-                        <TouchableOpacity onPress={() => { setcricketTab(true), setbasketballTab(false), setfootballTab(false), setbaseballTab(false), setrugbyTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: cricketTab ? colors.primary_blue : 'white', height: verticalScale(65) }} >
+                        <TouchableOpacity onPress={() => { setcricketTab(true), setbasketballTab(false), setfootballTab(false), setbaseballTab(false), setrugbyTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: cricketTab ? colors.green: 'white', height: verticalScale(65) }} >
                             <Image source={require('../../assets/images/cricketIcon.png')} style={{ width: scale(28), height: scale(28) }} />
-                            <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: cricketTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(11), marginTop: verticalScale(4) }} >Cricket</Text>
+                            <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: cricketTab ? colors.green: colors.greyColour, fontSize: scaleFont(11), marginTop: verticalScale(4) }} >Cricket</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { setcricketTab(false), setbasketballTab(true), setfootballTab(false), setbaseballTab(false), setrugbyTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: basketballTab ? colors.primary_blue : 'white', height: verticalScale(65) }} >
-                            <Image source={require('../../assets/images/basketballIcon.png')} style={{ width: scale(28), height: scale(28) }} />
-                            <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: basketballTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(11), marginTop: verticalScale(4) }} >Basketball</Text>
-
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => { setcricketTab(false), setbasketballTab(false), setfootballTab(true), setbaseballTab(false), setrugbyTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: footballTab ? colors.primary_blue : 'white', height: verticalScale(65) }} >
-                            <Image source={require('../../assets/images/soccerIcon.png')} style={{ width: scale(28), height: scale(28) }} />
-                            <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: footballTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(11), marginTop: verticalScale(4) }} >Football</Text>
-
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={() => { setcricketTab(false), setbasketballTab(false), setfootballTab(false), setbaseballTab(true), setrugbyTab(false) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: baseballTab ? colors.primary_blue : 'white', height: verticalScale(65) }} >
-                            <Image source={require('../../assets/images/baseballIcon.png')} style={{ width: scale(28), height: scale(28) }} />
-                            <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: baseballTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(11), marginTop: verticalScale(4) }} >Baseball</Text>
-                        </TouchableOpacity>
-
-
-                        <TouchableOpacity onPress={() => { setcricketTab(false), setbasketballTab(false), setfootballTab(false), setbaseballTab(false), setrugbyTab(true) }} style={{ justifyContent: 'center', alignItems: 'center', borderBottomWidth: verticalScale(3), borderColor: rugbyTab ? colors.primary_blue : 'white', height: verticalScale(65) }} >
-                            <Image source={require('../../assets/images/rugbyIcon.png')} style={{ width: scale(28), height: scale(28) }} />
-                            <Text style={{ textAlign: 'center', fontFamily: constants.OPENSANS_FONT_BOLD, color: rugbyTab ? colors.primary_blue : colors.greyColour, fontSize: scaleFont(11), marginTop: verticalScale(4) }} >Baseball</Text>
-                        </TouchableOpacity>
+                
 
                     </View>
                 </View>
@@ -91,13 +75,13 @@ const MyContest = (props) => {
 
 
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: scale(340), alignSelf: 'center', marginTop: verticalScale(10), height: verticalScale(60) }}>
-                        <TouchableOpacity activeOpacity={0.7} onPress={() => { setupcoming(true), setlive(false), setcompleted(false) }} style={{ width: scale(100), height: verticalScale(40), borderRadius: verticalScale(20), backgroundColor: upcoming ? colors.primary_blue : colors.white, justifyContent: 'center', alignItems: 'center', elevation: 1 }} >
+                        <TouchableOpacity activeOpacity={0.7} onPress={() => { setupcoming(true), setlive(false), setcompleted(false) }} style={{ width: scale(100), height: verticalScale(40), borderRadius: verticalScale(20), backgroundColor: upcoming ? colors.green : colors.white, justifyContent: 'center', alignItems: 'center', elevation: 1 }} >
                             <Text style={{ color: upcoming ? colors.white : colors.black, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12) }} >Upcoming</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.7} onPress={() => { setupcoming(false), setlive(true), setcompleted(false) }} style={{ width: scale(100), height: verticalScale(40), borderRadius: verticalScale(20), backgroundColor: live ? colors.primary_blue : colors.white, justifyContent: 'center', alignItems: 'center', elevation: 1 }} >
+                        <TouchableOpacity activeOpacity={0.7} onPress={() => { setupcoming(false), setlive(true), setcompleted(false) }} style={{ width: scale(100), height: verticalScale(40), borderRadius: verticalScale(20), backgroundColor: live ? colors.green : colors.white, justifyContent: 'center', alignItems: 'center', elevation: 1 }} >
                             <Text style={{ color: live ? colors.white : colors.black, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12) }} >Live</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.7} onPress={() => { setupcoming(false), setlive(false), setcompleted(true) }} style={{ width: scale(100), height: verticalScale(40), borderRadius: verticalScale(20), backgroundColor: completed ? colors.primary_blue : colors.white, justifyContent: 'center', alignItems: 'center', elevation: 1 }} >
+                        <TouchableOpacity activeOpacity={0.7} onPress={() => { setupcoming(false), setlive(false), setcompleted(true) }} style={{ width: scale(100), height: verticalScale(40), borderRadius: verticalScale(20), backgroundColor: completed ? colors.green : colors.white, justifyContent: 'center', alignItems: 'center', elevation: 1 }} >
                             <Text style={{ color: completed ? colors.white : colors.black, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12) }} >Completed</Text>
                         </TouchableOpacity>
                     </View>

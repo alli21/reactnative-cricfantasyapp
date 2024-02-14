@@ -72,7 +72,7 @@ const SignInScreen = (props) => {
 
 
 
-                    <TouchableOpacity onPress={() => props.navigation.navigate('BottomTab')} style={{ backgroundColor: colors.primary_blue, height: verticalScale(50), width: verticalScale(50), marginLeft: scale(20), borderRadius: verticalScale(100), marginTop: verticalScale(24), justifyContent: 'center', alignItems: 'center' }}>
+                    <TouchableOpacity onPress={() => props.navigation.navigate('BottomTab')} style={{ backgroundColor: colors.green, height: verticalScale(50), width: verticalScale(50), marginLeft: scale(20), borderRadius: verticalScale(100), marginTop: verticalScale(24), justifyContent: 'center', alignItems: 'center' }}>
                         <Icon
                             name="arrow-right"
                             size={verticalScale(26)}

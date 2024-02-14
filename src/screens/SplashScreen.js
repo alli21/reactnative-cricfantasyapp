@@ -16,7 +16,7 @@ const SplashScreen = (props) => {
     }, [])
 
     return (
-        <View style={{ flex: 1, backgroundColor: colors.primary_blue, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, backgroundColor: colors.green, justifyContent: 'center', alignItems: 'center' }}>
 
             <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
             />
@@ -30,7 +30,7 @@ const SplashScreen = (props) => {
                             size={verticalScale(80)}
                             color={colors.white}
                         />
-                        <Text style={{ color: colors.white, fontFamily: constants.OPENSANS_FONT_EXTRA_BOLD, fontSize: scaleFont(40), marginTop: verticalScale(5) }}>NeoSport</Text>
+                        <Text style={{ color: colors.white, fontFamily: constants.OPENSANS_FONT_EXTRA_BOLD, fontSize: scaleFont(40), marginTop: verticalScale(5) }}>Stars Cric</Text>
                     </View>
 
                 </View>
