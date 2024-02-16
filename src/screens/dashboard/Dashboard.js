@@ -9,6 +9,7 @@ import { bannercarouseldata } from '../../utils/Data';
 import { useSelector } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import Loader from '../../components/Loader';
+import { getMatches } from '../../api consumption/restAPI';
 
 const Dashboard = (props) => {
     const theme = useSelector(state => state.theme)
@@ -25,19 +26,65 @@ const Dashboard = (props) => {
     const [loadingDashScreen, setLoadingDashScreen] = useState(false)
 
 
-    const getMyMatches = async () => {
-        setLoadingDashScreen(true)
-        fetch('https://60a61d65c0c1fd00175f546a.mockapi.io/library/MatchData').then((res) => {
-            return res.json()
-        }).then((response) => {
-            setmatchdata(response)
-            setLoadingDashScreen(false)
-        })
+    // const getMatches = async () => {
+        
+    //     setLoadingDashScreen(true)
+    //     // fetch(
+    //     //   "https://api.cricapi.com/v1/matches?apikey=d0d6c064-4700-4ddc-ad12-791b7190f8b3&offset=0"
+    //     // )
+    //       .then((res) => {
+    //         return res.json()
+    //       })
+    //       .then((response) => {
+    //         const today = new Date()
+    //         console.log(response)
+    //         console.log(response.data)
 
-    }
+    //         const data = response.data.map((match) => {
+    //             debugger
+    //           return {
+    //             match_id: match.id,
+    //             status: match.status,
+    //             time_left: match.dateTimeGMT,
+    //             tournament: match.venue,
+    //             team1_name: match.teamInfo[0].shortname,
+    //             team2_name: match.teamInfo[1].shortname,
+    //             team1: match.teamInfo[0].img,
+    //             team2: match.teamInfo[1].img,
+    //           }
+    //         })
+    //         console.log(data)
+    //         setmatchdata(data)
+    //         console.log(matchdata)
+    //         setLoadingDashScreen(false)
+    //       })
+    //       .catch((error) => console.log(error))
+    //   }
+    
 
     useEffect(() => {
-        getMyMatches()
+        getMatches().then((res)=>{
+            const _data = res.data.data
+            console.log('runnn',_data)
+            const filterData = _data.filter((match)=>match.teamInfo)
+            const data = filterData.map((match)=>{
+                return  {
+                    match_id: match.id,
+                    status: match.status,
+                    time_left: match.dateTimeGMT,
+                    tournament: match.venue,
+                    team1_name: match.teamInfo[0].shortname,
+                    team2_name: match.teamInfo[1].shortname,
+                    team1: match.teamInfo[0].img,
+                    team2: match.teamInfo[1].img,
+                  }
+            })
+            console.log('runnn',data)
+
+            setmatchdata(data)
+
+        })
+        .catch((err)=>console.log(err))
     }, [])
 
     return (
@@ -178,7 +225,9 @@ const Dashboard = (props) => {
                                                 <TouchableOpacity onPress={() => props.navigation.navigate('Contestselection', { team1_name: item.team1_name, team2_name: item.team2_name, time_left: item.time_left, team1_img: item.team1, team2_img: item.team2 })} activeOpacity={0.7} style={{ flexDirection: 'row', justifyContent: 'space-between', width: scale(340), alignItems: 'center', alignSelf: 'center', marginVertical: verticalScale(10), paddingHorizontal: scale(20), backgroundColor: colors.white, borderRadius: verticalScale(12), height: verticalScale(90) }}>
                                                     <View style={{ justifyContent: "center", alignItems: "center" }}>
                                                         <Image source={{ uri: item.team1 }} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
-                                                        <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>{item.team1_name.length > 20 ? item.team1_name.split(" ")[0] + " " + item.team1_name.split(" ")[1] + " ..." : item.team1_name}</Text>
+                                                        <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>{item.team1_name?.length > 20 ? item.team1_name.split(" ")[0] + " " + item.team1_name.split(" ")[1] + " ..." : item.team1_name}</Text>
+
+
                                                     </View>
                                                     <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                                         <Text style={{ color: colors.black }} >
