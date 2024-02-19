@@ -77,7 +77,7 @@ const Settings = (props) => {
                 <Text style={{ fontSize: scaleFont(12), color: colors.green, fontFamily: constants.OPENSANS_FONT_BOLD }}>Preferred App Language</Text>
                 <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', height: verticalScale(40), justifyContent: 'space-between', alignItems: 'center', backgroundColor: theme.colors.background_primary, paddingEnd: scale(20) }} onPress={() => toggleExpand1()}>
                     <Text style={{ fontSize: scaleFont(14), color: theme.colors.text_primary, }}>{lang}</Text>
-                    <FontAwesome name={expanded1 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} color={colors.secondary_blue} />
+                    <FontAwesome name={expanded1 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} style={{color:colors.green}} />
                 </TouchableOpacity>
 
                 {
@@ -103,7 +103,7 @@ const Settings = (props) => {
                 <Text style={{ fontSize: scaleFont(12), color: colors.green, fontFamily: constants.OPENSANS_FONT_BOLD }}>Privacy Settings</Text>
                 <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', height: verticalScale(40), justifyContent: 'space-between', alignItems: 'center', backgroundColor: theme.colors.background_primary, paddingEnd: scale(20) }} onPress={() => toggleExpand2()}>
                     <Text style={{ fontSize: scaleFont(14), color: theme.colors.text_primary, }}>{download}</Text>
-                    <FontAwesome name={expanded2 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} color={colors.secondary_blue} />
+                    <FontAwesome name={expanded2 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} color={colors.green} />
                 </TouchableOpacity>
 
                 {
@@ -129,7 +129,7 @@ const Settings = (props) => {
                 <Text style={{ fontSize: scaleFont(12), color: colors.green, fontFamily: constants.OPENSANS_FONT_BOLD }}>Make Me Discoverable</Text>
                 <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', height: verticalScale(40), justifyContent: 'space-between', alignItems: 'center', backgroundColor: theme.colors.background_primary, paddingEnd: scale(20) }} onPress={() => toggleExpand3()}>
                     <Text style={{ fontSize: scaleFont(14), color: theme.colors.text_primary, }}>{quality}</Text>
-                    <FontAwesome name={expanded3 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} color={colors.secondary_blue} />
+                    <FontAwesome name={expanded3 ? 'angle-up' : 'angle-down'} size={verticalScale(24)} color={colors.green} />
                 </TouchableOpacity>
                 {
                     expanded3 ? (<Animated.View style={{ backgroundColor: theme.colors.background_primary, height: verticalScale(70) }}>

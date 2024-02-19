@@ -23,13 +23,13 @@ const AddMoney = (props) => {
             <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
             />
 
-            <LinearGradient
-                start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }}
-                colors={[colors.secondary_blue, colors.primary_blue]}
+            <View
+                
                 style={{
                     width: scale(365),
                     height: verticalScale(80),
                     alignSelf: 'center',
+                    backgroundColor:colors.greeen
                 }}>
                 <View style={{ alignSelf: 'center', width: scale(365), marginTop: verticalScale(40), flexDirection: 'row', alignItems: 'center', }}>
                     <TouchableOpacity style={{ width: scale(134), paddingHorizontal: scale(20), }} onPress={() => { props.navigation.goBack() }} >
@@ -41,7 +41,7 @@ const AddMoney = (props) => {
                     </TouchableOpacity>
                     <Text style={{ fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(18), color: colors.white }}>Add Money</Text>
                 </View>
-            </LinearGradient>
+            </View>
 
             <View style={{ flex: 1, backgroundColor: "#f5f7fb" }}>
 
@@ -50,7 +50,7 @@ const AddMoney = (props) => {
                     <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12) }}>
                         Total available balance</Text>
                     <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_SEMI_BOLD, fontSize: scaleFont(12) }}>
-                        {'\u20B9'}106</Text>
+                        106</Text>
                 </View>
 
 

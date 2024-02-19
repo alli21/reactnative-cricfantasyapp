@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
+import { getSeries } from '../../api consumption/restApi';
 
 
 const MyContest = (props) => {
@@ -22,8 +23,33 @@ const MyContest = (props) => {
     const [live, setlive] = useState(false)
     const [completed, setcompleted] = useState(false)
     const navigation = useNavigation()
+    // const [matchdata, setmatchdata] = useState([])
 
+    // useEffect(() => {
+    //     getSeries().then((res)=>{
+    //         const _data = res.data.data
+    //         console.log('runnn',_data)
+    //         const filterData = _data.filter((match)=>match.teamInfo)
+    //         const data = filterData.map((match)=>{
+    //             return  {
+    //                 match_id: match.id,
+    //                 status: match.status,
+    //                 time_left: match.dateTimeGMT,
+    //                 tournament: match.venue,
+    //                 team1_name: match.teamInfo[0].shortname,
+    //                 team2_name: match.teamInfo[1].shortname,
+    //                 team1: match.teamInfo[0].img,
+    //                 team2: match.teamInfo[1].img,
+    //               }
+    //         })
+    //         console.log('runnn',data)
 
+    //         setmatchdata(data)
+
+    //     })
+        
+    //     .catch((err)=>console.log(err))
+    // },[])
 
     return (
         <View style={{ flex: 1, backgroundColor: theme.colors.background_primary }}>

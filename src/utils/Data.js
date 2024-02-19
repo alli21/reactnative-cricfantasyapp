@@ -139,11 +139,11 @@ export const matchdata = [
 ]
 
 export const contestData = [
-    { "prize": "4,00,00,000", "joining_fee": "20", "entries": "20,00,000", "contest_status": 60, "winners": "4,00,000", "joined_status": "Joined with 6 Teams" },
-    { "prize": "1,00,00,000", "joining_fee": "20", "entries": "5,00,000", "contest_status": 75, "winners": "1,00,000", "joined_status": "Joined with 2 Teams" },
-    { "prize": "20,00,000", "joining_fee": "80", "entries": "25,000", "contest_status": 20, "winners": "5,000", "joined_status": "Joined with 1 Team" },
-    { "prize": "5,000", "joining_fee": "25", "entries": "200", "contest_status": 20, "winners": "20", "joined_status": "Joined with 3 Teams" },
-    { "prize": "400", "joining_fee": "10", "entries": "40", "contest_status": 90, "winners": "5", "joined_status": "Joined with 1 Team" }
+    { "prize": "1000", "joining_fee": "0", "entries": "0", "contest_status": 60, "winners": "4,00,000", "joined_status": "Joined with 6 Teams" },
+    { "prize": "750", "joining_fee": "0", "entries": "0", "contest_status": 75, "winners": "1,00,000", "joined_status": "Joined with 2 Teams" },
+    { "prize": "250", "joining_fee": "0", "entries": "0", "contest_status": 20, "winners": "5,000", "joined_status": "Joined with 1 Team" },
+    { "prize": "250", "joining_fee": "0", "entries": "0", "contest_status": 20, "winners": "20", "joined_status": "Joined with 3 Teams" },
+    { "prize": "250", "joining_fee": "0", "entries": "0", "contest_status": 90, "winners": "5", "joined_status": "Joined with 1 Team" }
 ]
 
 export const completedMatchData = [
@@ -158,7 +158,7 @@ export const Livematchdata = [
 ]
 
 export const bannercarouseldata = [
-    { "id": 1, "bannerredirecturl": "PlayerScreen", "ismovie": true, "url": require("../assets/images/carousel1.png"), "name": "Forrest Gump", "genre": "Drama, Romance", "language": "English", "duration": "2 h 22 min", "size": "712MB", },
+    // { "id": 1, "bannerredirecturl": "PlayerScreen", "ismovie": true, "url": require("../assets/images/carousel1.png"), "name": "Forrest Gump", "genre": "Drama, Romance", "language": "English", "duration": "2 h 22 min", "size": "712MB", },
     { "id": 2, "bannerredirecturl": "PlayerScreen", "ismovie": true, "url": require("../assets/images/carousel2.jpeg"), "name": "The Godfather", "genre": "Crime, Drama", "language": "English", "duration": "2 h 55 min", "size": "236 Episodes", },
     { "id": 3, "bannerredirecturl": "PlayerScreen", "ismovie": true, "url": require("../assets/images/carousel3.jpeg"), "name": "Life Of Pi", "genre": "Adventure Drama", "language": "English", "duration": "2 h 7 min", "size": "26 Episodes", },
 ]

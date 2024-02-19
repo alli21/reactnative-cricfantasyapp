@@ -69,10 +69,10 @@ const ContestSelection = (props) => {
                                             <Text style={{ color: colors.greyColour, fontSize: scaleFont(12), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>
                                                 Total Prize</Text>
                                             <Text style={{ color: colors.black, fontSize: scaleFont(18), fontFamily: constants.OPENSANS_FONT_BOLD }}>
-                                                {'\u20B9'}{item.prize}</Text>
+                                                {'Pkr'}{item.prize}</Text>
                                         </View>
                                         <TouchableOpacity onPress={() => props.navigation.navigate('Playerselection', { team1_img: team1_img, team2_img: team2_img, team1_name: team1_name, team2_name: team2_name })} style={{ backgroundColor: colors.primary_blue, justifyContent: 'center', alignItems: 'center', borderRadius: verticalScale(6), paddingHorizontal: scale(20), paddingVertical: verticalScale(6) }}>
-                                            <Text style={{ color: colors.white, fontSize: scaleFont(12), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Join {'\u20B9'}{item.joining_fee}</Text>
+                                            <Text style={{ color: colors.white, fontSize: scaleFont(12), fontFamily: constants.OPENSANS_FONT_SEMI_BOLD }}>Join {'Pkr'}{item.joining_fee}</Text>
                                         </TouchableOpacity>
                                     </View>
 
