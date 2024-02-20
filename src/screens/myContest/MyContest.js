@@ -1,13 +1,15 @@
+
 import React, { useState, useEffect } from 'react';
 import { Animated, View, Text, SafeAreaView, StatusBar, TouchableOpacity, FlatList, Keyboard, Image, ScrollView, TextInput } from 'react-native';
 import { colors, scaleFont, scale, verticalScale, constants } from '../../utils';
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import { moviesdata, genredata, recentsearches, popularsearches, seriesdata, matchdata, completedMatchData } from '../../utils/Data';
+import { moviesdata, genredata, recentsearches, popularsearches, seriesdata, matchdata } from '../../utils/Data';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import { useSelector } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
+import { getMatches } from '../../api consumption/restApi';
 
 
 const MyContest = (props) => {
@@ -21,10 +23,51 @@ const MyContest = (props) => {
     const [upcoming, setupcoming] = useState(true)
     const [live, setlive] = useState(false)
     const [completed, setcompleted] = useState(false)
+    const [completedMatchData , setCompletedMatchData] = useState([])
+    const [upcomingMatchData , setUpcomingMatchData] =useState([])
+    const [liveMatchData, setLiveMatchData]=useState([])
+    const [matchdata, setMatchdata] = useState([])
+
     const navigation = useNavigation()
-
-
-
+    console.log('ddddddddddddddd',props)
+ 
+    const reshapeDataForMatches = (data) => {
+        return data.map((match) => {
+          console.log(match.teamInfo[0].img, match.teamInfo[1].img); // Log image paths or URLs
+          return {
+            match_id: match.id,
+            status: match.status,
+            time_left: match.dateTimeGMT,
+            tournament: match.venue,
+            team1_name: match.teamInfo[0].shortname,
+            team2_name: match.teamInfo[1].shortname,
+            team1: match.teamInfo[0].img,
+            team2: match.teamInfo[1].img,
+          };
+        });
+      };
+      
+      
+    
+      useEffect(() => {
+         getMatches()
+      .then((res) => {
+        const _data = res.data.data;
+        const filterData = _data.filter((match) => match.teamInfo);
+        const _completed = filterData.filter(
+          (match) => match.matchStarted === true && match.matchEnded === true
+        );
+        const _upcoming = filterData.filter(
+            (match) => match.matchStarted === false && match.matchEnded === false
+          );
+    const _live = filterData.filter((match)=>match.matchStarted === true && match.matchEnded === false)
+    console.log('live' , _live)
+        setCompletedMatchData(reshapeDataForMatches(_completed));
+        setUpcomingMatchData(reshapeDataForMatches(_upcoming));
+        setLiveMatchData(reshapeDataForMatches(_live))
+      })
+      .catch((err) => console.log(err));
+      }, []);
     return (
         <View style={{ flex: 1, backgroundColor: theme.colors.background_primary }}>
             <TouchableOpacity style={{ flex: 1 }} activeOpacity={1} onPress={() => Keyboard.dismiss()}>
@@ -90,14 +133,19 @@ const MyContest = (props) => {
                         upcoming && (
                             <View style={{ flex: 1 }}>
                                 <FlatList
-                                    data={matchdata}
+                                    data={upcomingMatchData}
                                     showsVerticalScrollIndicator={false}
                                     renderItem={({ item }) => {
                                         return (
                                             <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', justifyContent: 'space-between', width: scale(340), alignItems: 'center', alignSelf: 'center', marginVertical: verticalScale(10), paddingHorizontal: scale(20), backgroundColor: colors.white, borderRadius: verticalScale(12), height: verticalScale(90) }}>
                                                 <View style={{ justifyContent: "center", alignItems: "center" }}>
                                                     <Image source={{ uri: item.team1 }} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
-                                                    <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>{item.team1_name.length > 20 ? item.team1_name.split(" ")[0] + " " + item.team1_name.split(" ")[1] + " ..." : item.team1_name}</Text>
+                                                    <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>
+                                                    {item.team1_name && item.team1_name.length > 20
+                                                      ? item.team1_name.split(" ")[0] + " " + item.team1_name.split(" ")[1] + " ..."
+                                                      : item.team1_name || ''}
+                                                  </Text>
+                                                  
                                                 </View>
                                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                                     <Text style={{ color: colors.black }} >
@@ -137,12 +185,17 @@ const MyContest = (props) => {
                                     data={completedMatchData}
                                     showsVerticalScrollIndicator={false}
                                     renderItem={({ item }) => {
+                                        console.log('item',item)
                                         return (
                                             <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', justifyContent: 'space-between', width: scale(340), alignItems: 'center', alignSelf: 'center', marginVertical: verticalScale(10), paddingHorizontal: scale(20), backgroundColor: colors.white, borderRadius: verticalScale(12), height: verticalScale(90) }}>
                                                 <View style={{ justifyContent: "center", alignItems: "center" }}>
-                                                    <Image source={item.team1} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
-                                                    <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>{item.team1_name.length > 20 ? item.team1_name.split(" ")[0] + " " + item.team1_name.split(" ")[1] + " ..." : item.team1_name}</Text>
-                                                </View>
+                                                    <Image source={{ uri: item.team1 }} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
+                                                    <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>
+                                                    {item.team1_name && item.team1_name.length > 20
+                                                      ? item.team1_name.split(" ").slice(0, 2).join(" ") + " ..."
+                                                      : item.team1_name || ''}
+                                                  </Text>
+                                                                                                  </View>
                                                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                                     <Text style={{ color: colors.black }} >
                                                         {item.tournament}
@@ -152,7 +205,7 @@ const MyContest = (props) => {
                                                     </Text>
                                                 </View>
                                                 <View style={{ justifyContent: "center", alignItems: "center" }}>
-                                                    <Image source={item.team2} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
+                                                    <Image source={{ uri: item.team2 }} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
                                                     <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>{item.team2_name.length > 20 ? item.team2_name.split(" ")[0] + " " + item.team2_name.split(" ")[1] + " ..." : item.team2_name}</Text>
                                                 </View>
                                             </TouchableOpacity>
