@@ -19,6 +19,6 @@ export const getScore =()=>{
 export const getSeries =()=>{
     return axios({
         method:'get',
-        url:`${URL}${VERSION}${endPoints.series}?apikey=${API_KEY}&offset=${RULE_SET}`
+        url:`https://api.cricapi.com/v1/series?apikey=bc4812af-967b-4627-a547-c07db98da805&offset=0&search=`
     })
 }

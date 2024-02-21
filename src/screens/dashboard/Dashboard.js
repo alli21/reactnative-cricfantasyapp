@@ -9,7 +9,7 @@ import { bannercarouseldata } from '../../utils/Data';
 import { useSelector } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import Loader from '../../components/Loader';
-import { getScore } from '../../api consumption/restApi';
+import { getScore, getSeries } from '../../api consumption/restApi';
 import { getMatches } from '../../api consumption/restApi';
 
 const Dashboard = (props) => {
@@ -26,6 +26,14 @@ const Dashboard = (props) => {
     const [matchdata, setmatchdata] = useState([])
     const [loadingDashScreen, setLoadingDashScreen] = useState(false)
 
+const [seriesData,setSeriesData]= useState(null);
+
+
+const getSeriesName = (data , key)=>{
+    console.log('id = ',data.map((x)=>x.id))
+    console.log('key = ',key)
+    return data.filter((series)=>series.id=== key)
+}
 
     // const getMyMatches = async () => {
     //     setLoadingDashScreen(true)
@@ -38,49 +46,54 @@ const Dashboard = (props) => {
 
     // }
 
+    useEffect(()=>{
+        getSeries().then((res)=>{
+
+            const _data1 = res.data.data;
+            console.log('series',_data1);
+
+            setSeriesData(_data1)
+           
+        }).catch((err)=>console.log(err))
+
+
+    },[])
+
     useEffect(() => {
-        getMatches().then((res)=>{
+      
+        
+
+        if (seriesData){
+
+            
+            getMatches().then((res)=>{
             const _data = res.data.data
             console.log('runnn',_data)
-            const filterData = _data.filter((match)=>match.teamInfo)
+            const filterData = _data.filter((match)=>match.teamInfo && match.matchEnded === false && match.matchStarted ===false  )
+            console.log('filterData',filterData)
+            
             const data = filterData.map((match)=>{
                 return  {
                     match_id: match.id,
                     status: match.status,
                     time_left: match.dateTimeGMT,
-                    tournament: match.venue,
+                    tournament: getSeriesName(seriesData , match.id).name,
                     team1_name: match.teamInfo[0].shortname,
                     team2_name: match.teamInfo[1].shortname,
                     team1: match.teamInfo[0].img,
                     team2: match.teamInfo[1].img,
-                  }
+                }
             })
             console.log('runnn',data)
 
             setmatchdata(data)
-
+            
         })
         .catch((err)=>console.log(err))
-        // getScore().then((res)=>{
-        //     const _data1 = res.data.data
-        //   console.log('run',_data1)
-        //     const data1 = _data1.map((score)=>{
-        //         return{
-        //             match_id:score.id,
-        //             staus:score.status,
-        //             team1_name:score.t1s,
-        //             team2_name:score.t2s,
-        //             team1:score.t1img,
-        //             team2:score.t2img
-        //         }
-        //     })
-        //     console.log('run',data1)
-
-        //     setmatchdata(data1)
-
-        // })
-        // .catch((err)=>console.log(err))
-    }, [])
+    }
+        
+  
+    }, [seriesData])
 
     return (
         <View style={{ flex: 1, backgroundColor: colors.white }}>
@@ -202,6 +215,7 @@ const Dashboard = (props) => {
                                         }}
                                     />
                                 </View>
+                                
 
                                 <CustomSlider data={bannercarouseldata} />
 

@@ -38,14 +38,14 @@ const PlayerSelection = (props) => {
         fetch('https://60a61d65c0c1fd00175f546a.mockapi.io/library/cvb').then((res) => {
             return res.json()
         }).then((response) => {
-            console.log(response)
+            console.log(response,'res')
             setAllPlayerList(response)
         })
     }
 
 
     const addItem = async (item, index) => {
-        console.log(team1, team2)
+        console.log(team1, team2,'teamm')
         let data = playerList;
         if (item.role == "WK-Batsman") {
             if (Keepercount === 1) {
@@ -168,6 +168,7 @@ const PlayerSelection = (props) => {
                     if (batsmancount >= 3 && Allroundercount >= 2 && Keepercount == 1 && playercount < 11) {
                         if (credits == 0 || credits - item.credits >= 0) {
                             let newdata = data.concat(item)
+                            console.log(newdata,'newdata')
                             const arUnique = newdata.filter((a, i) => newdata.findIndex((s) => a.player_id === s.player_id) === i)
                             setplayerList([...arUnique])
                             playerSelectedcheck(index)
