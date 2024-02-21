@@ -1,46 +1,174 @@
 [
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_loginbackground.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_loginbackground.png"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-xhdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_carousel3.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_carousel3.jpeg"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/drawable_rn_edit_text_material.xml.flat",
-        "source": "com.fantasysports.app-main-31:/drawable/rn_edit_text_material.xml"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-hdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_avatar1.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_avatar1.jpeg"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_ruppeeicon.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_ruppeeicon.jpeg"
     },
     {
-        "merged": "com.fantasysports.app-merged_res-29:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.fantasysports.app-main-31:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_referearn.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_referearn.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_flagaustralia.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_flagaustralia.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-xxxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-xxxhdpi\\node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_tgicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_tgicon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-xhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-xhdpi\\node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_wsicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_wsicon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_igicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_igicon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_flagengland.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_flagengland.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_johndoe.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_johndoe.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable_rn_edit_text_material.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable\\rn_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-hdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-hdpi\\node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_cricketicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_cricketicon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_flagindia.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_flagindia.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_node_modules_reactnativepaper_src_assets_backchevron.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\node_modules_reactnativepaper_src_assets_backchevron.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_bike.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_bike.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_google.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_google.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-xxxhdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.fantasysports.app-merged_res-29:/drawable-mdpi_src_assets_images_loginbackground.png.flat",
+        "source": "com.fantasysports.app-main-31:/drawable-mdpi/src_assets_images_loginbackground.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_flagafrica.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_flagafrica.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_pitch.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_pitch.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_carousel1.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_carousel1.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-xxhdpi\\node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-mdpi_src_assets_images_carousel2.jpeg.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-mdpi\\src_assets_images_carousel2.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-merged_res-29:\\drawable-xxhdpi_node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\7.5.1\\com.fantasysports.app-main-31:\\drawable-xxhdpi\\node_modules_reactnavigation_drawer_src_views_assets_toggledrawericon.png"
     }
 ]
