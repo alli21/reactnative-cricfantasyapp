@@ -1,0 +1,7 @@
+com.fantasysports.test.app-androidTest-0 D:\OneDrive\work\Cricket App\reactnative-cricfantasyapp\android\app\build\generated\res\resValues\androidTest\debug
+com.fantasysports.test.app-androidTest-1 D:\OneDrive\work\Cricket App\reactnative-cricfantasyapp\android\app\build\generated\res\rs\androidTest\debug
+com.fantasysports.test.app-mergeDebugAndroidTestResources-2 D:\OneDrive\work\Cricket App\reactnative-cricfantasyapp\android\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.fantasysports.test.app-mergeDebugAndroidTestResources-3 D:\OneDrive\work\Cricket App\reactnative-cricfantasyapp\android\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.fantasysports.test.app-merged_res-4 D:\OneDrive\work\Cricket App\reactnative-cricfantasyapp\android\app\build\intermediates\merged_res\debugAndroidTest
+com.fantasysports.test.app-androidTest-5 D:\OneDrive\work\Cricket App\reactnative-cricfantasyapp\android\app\src\androidTest\res
+com.fantasysports.test.app-androidTestDebug-6 D:\OneDrive\work\Cricket App\reactnative-cricfantasyapp\android\app\src\androidTestDebug\res

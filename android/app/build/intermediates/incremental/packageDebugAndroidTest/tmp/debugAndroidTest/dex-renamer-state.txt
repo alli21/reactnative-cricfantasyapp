@@ -1,0 +1,7 @@
+#Thu Feb 15 18:27:03 PKT 2024
+base.0=D\:\\OneDrive\\work\\Cricket App\\reactnative-cricfantasyapp\\android\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.1=D\:\\OneDrive\\work\\Cricket App\\reactnative-cricfantasyapp\\android\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\6\\classes.dex
+path.0=0/classes.dex
+path.1=6/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
