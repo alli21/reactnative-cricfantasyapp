@@ -7,18 +7,18 @@ import { endPoints } from "./endPoint";
 export const getMatches =()=>{
     return axios({
         method:'get',
-        url:`${URL}${VERSION}${endPoints.matches}?apikey=${API_KEY}&offset=${RULE_SET}`
+        url:`https://api.cricapi.com/v1/currentMatches?apikey=d0d6c064-4700-4ddc-ad12-791b7190f8b3&offset=0`
     })
 }
 export const getScore =()=>{
     return axios({
         method:'get',
-        url:`${URL}${VERSION}${endPoints.score}?apikey=${API_KEY}&offset=${RULE_SET}`
+        url:`https://api.cricapi.com/v1/cricScore?apikey=d0d6c064-4700-4ddc-ad12-791b7190f8b3`
     })
 }
 export const getSeries =()=>{
     return axios({
         method:'get',
-        url:`https://api.cricapi.com/v1/series?apikey=bc4812af-967b-4627-a547-c07db98da805&offset=0&search=`
+        url:`https://api.cricapi.com/v1/series?apikey=d0d6c064-4700-4ddc-ad12-791b7190f8b3&offset=0`
     })
 }

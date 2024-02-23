@@ -29,10 +29,26 @@ const PlayerSelection = (props) => {
     const [team1count, setteam1count] = useState(0)
     const [team2count, setteam2count] = useState(0)
     const [credits, setcredits] = useState(100);
+    const [credits1, setcredits1] = useState(100);
+
+    const [team , setTeam] =  useState([])
+
+
+    useEffect(()=>{
+        getPlayerList()
+
+    },[])
 
     useEffect(() => {
-        getPlayerList()
-    }, [])
+        const isBatsman = team.some((x)=>x.role==='BAT')
+        const isWicketKeeper = team.some((x)=>x.role==='WK')
+        const isBowler = team.some((x)=>x.role==='BOWL')
+
+        const creditsRemaining = team.reduce((sum, x) => sum - x.credits, 100);
+        setcredits(creditsRemaining);
+
+
+    }, [team ])
 
     const getPlayerList = () => {
         fetch('https://60a61d65c0c1fd00175f546a.mockapi.io/library/cvb').then((res) => {
@@ -45,298 +61,18 @@ const PlayerSelection = (props) => {
 
 
     const addItem = async (item, index) => {
-        console.log(team1, team2,'teamm')
-        let data = playerList;
-        if (item.role == "WK-Batsman") {
-            if (Keepercount === 1) {
-                if (item.isSelected == true) {
-                    playerSelectedcheck(index)
-                    data.splice(data.findIndex(e => e.player_id === item.player_id), 1);
-                    setplayerList([...data])
+        const tempTeam = []
+        console.log('add item ', item , index)
+        playerSelectedcheck(index)
 
-
-                    setkeepercount(Keepercount - 1)
-                    setplayercount(playercount - 1)
-                    item.team_name == team2 ? setteam2count(team2count - 1) : setteam1count(team1count - 1)
-                    setcredits(credits + item.credits)
-
-                } else {
-                    Alert.alert("You can Select only 1 Keeper")
-                }
-            }
-            else {
-                if (credits === 0 || credits - item.credits >= 0) {
-                    let newdata = data.concat(item)
-                    const arUnique = newdata.filter((a, i) => newdata.findIndex((s) => a.player_id === s.player_id) === i)
-                    setplayerList([...arUnique])
-                    playerSelectedcheck(index)
-                    setplayercount(playercount + 1)
-                    setkeepercount(Keepercount + 1)
-                    item.team_name == team2 ? setteam2count(team2count + 1) : setteam1count(team1count + 1)
-                    setcredits(credits - item.credits)
-                }
-                else {
-                    Alert.alert("You do not have sufficcient credit points")
-                }
-
-
-            }
-        }
-        if (item.role == "Batsman") {
-            if (batsmancount == 6) {
-                if (item.isSelected == true) {
-                    playerSelectedcheck(index)
-                    data.splice(data.findIndex(e => e.player_id === item.player_id), 1);
-                    setplayerList([...data])
-                    setbatsmancount(batsmancount - 1)
-                    setplayercount(playercount - 1)
-                    item.team_name == team2 ? setteam2count(team2count - 1) : setteam1count(team1count - 1)
-                    setcredits(credits + item.credits)
-
-                } else {
-                    Alert.alert("You can Select only 6 batsman")
-                }
-            } else {
-                if (item.isSelected == true) {
-                    playerSelectedcheck(index)
-                    data.splice(data.findIndex(e => e.player_id === item.player_id), 1);
-                    setplayerList([...data])
-                    setbatsmancount(batsmancount - 1)
-                    setplayercount(playercount - 1)
-                    item.team_name == team2 ? setteam2count(team2count - 1) : setteam1count(team1count - 1)
-                    setcredits(credits + item.credits)
-
-
-                }
-                else {
-                    if (Keepercount == 1 && playercount < 11) {
-                        if (credits == 0 || credits - item.credits >= 0) {
-                            let newdata = data.concat(item)
-                            const arUnique = newdata.filter((a, i) => newdata.findIndex((s) => a.player_id === s.player_id) === i)
-                            setplayerList([...arUnique])
-                            playerSelectedcheck(index)
-                            setplayercount(playercount + 1)
-                            setbatsmancount(batsmancount + 1)
-                            item.team_name == team2 ? setteam2count(team2count + 1) : setteam1count(team1count + 1)
-                            setcredits(credits - item.credits)
-                        } else {
-                            Alert.alert("You do not have sufficient credit points")
-                        }
-
-
-
-                    } else {
-                        if (Keepercount == 0) {
-                            Alert.alert("Please Select 1 Keeper First")
-                        }
-                        else {
-                            Alert.alert("Team Full")
-                        }
-                    }
-
-                }
-            }
-        }
-        if (item.role == "Bowler") {
-            if (bowlercount == 4) {
-                if (item.isSelected == true) {
-                    playerSelectedcheck(index)
-                    data.splice(data.findIndex(e => e.player_id === item.player_id), 1);
-                    setplayerList([...data])
-                    setbowlercount(bowlercount - 1)
-                    setplayercount(playercount - 1)
-                    item.team_name == team2 ? setteam2count(team2count - 1) : setteam1count(team1count - 1)
-                    setcredits(credits + item.credits)
-
-
-                } else {
-                    Alert.alert("You can Select only 4 bowler")
-                }
-            } else {
-                if (item.isSelected == true) {
-                    playerSelectedcheck(index)
-                    data.splice(data.findIndex(e => e.player_id === item.player_id), 1);
-                    setplayerList([...data])
-                    setbowlercount(bowlercount - 1)
-                    setplayercount(playercount - 1)
-                    item.team_name == team2 ? setteam2count(team2count - 1) : setteam1count(team1count - 1)
-                    setcredits(credits + item.credits)
-
-
-                }
-                else {
-                    if (batsmancount >= 3 && Allroundercount >= 2 && Keepercount == 1 && playercount < 11) {
-                        if (credits == 0 || credits - item.credits >= 0) {
-                            let newdata = data.concat(item)
-                            console.log(newdata,'newdata')
-                            const arUnique = newdata.filter((a, i) => newdata.findIndex((s) => a.player_id === s.player_id) === i)
-                            setplayerList([...arUnique])
-                            playerSelectedcheck(index)
-                            setplayercount(playercount + 1)
-                            setbowlercount(bowlercount + 1)
-                            item.team_name == team2 ? setteam2count(team2count + 1) : setteam1count(team1count + 1)
-                            setcredits(credits - item.credits)
-                        } else {
-                            Alert.alert("You do not have sufficient credit points")
-                        }
-
-
-
-                    }
-                    else {
-                        if (batsmancount < 3) {
-                            if (Allroundercount < 2 && playercount >= 9) {
-                                if (Keepercount == 0) {
-                                    Alert.alert("Please Select 1 Keeper First")
-                                } else {
-                                    Alert.alert("Please Select atleast 2 All Rounders ")
-                                }
-                            } else {
-                                if (Keepercount == 0) {
-                                    Alert.alert("Please Select 1 Keeper First")
-                                } else {
-                                    Alert.alert("Please Select atleast 3 Batsman")
-                                }
-                            }
-                        } else {
-                            if (Allroundercount < 2 && playercount >= 9) {
-                                if (Keepercount == 0) {
-                                    Alert.alert("Please Select 1 Keeper First")
-                                } else {
-                                    Alert.alert("Please Select atleast 2 All Rounders ")
-                                }
-                            } else {
-                                if (Keepercount == 0) {
-                                    Alert.alert("Please Select 1 Keeper First")
-                                } else {
-                                    if (playercount < 11) {
-                                        if (credits == 0 || credits - item.credits >= 0) {
-                                            let newdata = data.concat(item)
-                                            const arUnique = newdata.filter((a, i) => newdata.findIndex((s) => a.player_id === s.player_id) === i)
-                                            setplayerList([...arUnique])
-                                            playerSelectedcheck(index)
-                                            setplayercount(playercount + 1)
-                                            setbowlercount(bowlercount + 1)
-                                            item.team_name == team2 ? setteam2count(team2count + 1) : setteam1count(team1count + 1)
-                                            setcredits(credits - item.credits)
-                                        } else {
-                                            Alert.alert("You do not have sufficient credit points")
-                                        }
-
-
-
-                                    } else {
-                                        Alert.alert("Team Full")
-
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-
-                }
-            }
-        }
-        if (item.role == "Batting Allrounder" || item.role == "Bowling Allrounder") {
-            if (Allroundercount == 4) {
-                if (item.isSelected == true) {
-                    playerSelectedcheck(index)
-                    data.splice(data.findIndex(e => e.player_id === item.player_id), 1);
-                    setplayerList([...data])
-                    setAllroundercount(Allroundercount - 1)
-                    setplayercount(playercount - 1)
-                    item.team_name == team2 ? setteam2count(team2count - 1) : setteam1count(team1count - 1)
-                    setcredits(credits + item.credits)
-
-
-                } else {
-                    Alert.alert("You can Select only 4 All Rounders")
-                }
-            } else {
-                if (item.isSelected == true) {
-                    playerSelectedcheck(index)
-                    data.splice(data.findIndex(e => e.player_id === item.player_id), 1);
-                    setplayerList([...data])
-                    setAllroundercount(Allroundercount - 1)
-                    setplayercount(playercount - 1)
-                    item.team_name == team2 ? setteam2count(team2count - 1) : setteam1count(team1count - 1)
-                    setcredits(credits + item.credits)
-
-
-                }
-                else {
-                    if (batsmancount >= 3 && bowlercount >= 2 && Keepercount == 1 && playercount < 11) {
-                        if (credits == 0 || credits - item.credits >= 0) {
-                            let newdata = data.concat(item)
-                            const arUnique = newdata.filter((a, i) => newdata.findIndex((s) => a.player_id === s.player_id) === i)
-                            setplayerList([...arUnique])
-                            playerSelectedcheck(index)
-                            setplayercount(playercount + 1)
-                            setAllroundercount(Allroundercount + 1)
-                            item.team_name == team2 ? setteam2count(team2count + 1) : setteam1count(team1count + 1)
-                            setcredits(credits - item.credits)
-                        } else {
-                            Alert.alert("You do not have sufficient credit points")
-                        }
-
-
-
-                    } else {
-                        if (batsmancount < 3) {
-                            if (bowlercount < 2) {
-                                if (Keepercount == 0) {
-                                    Alert.alert("Please Select 1 Keeper First")
-                                } else {
-                                    Alert.alert("Please Select atleast 2 Bowlers First")
-                                }
-                            } else {
-                                if (Keepercount == 0) {
-                                    Alert.alert("Please Select 1 Keeper First")
-                                } else {
-                                    Alert.alert("Please Select atleast 3 Batsman First")
-                                }
-                            }
-                        } else {
-                            if (bowlercount < 2) {
-                                if (Keepercount == 0) {
-                                    Alert.alert("Please Select 1 Keeper First")
-                                } else {
-                                    Alert.alert("Please Select atleast 2 Bowlers First")
-                                }
-                            } else {
-                                if (Keepercount == 0) {
-                                    Alert.alert("Please Select 1 Keeper First")
-                                } else {
-                                    if (playercount < 11) {
-                                        if (credits == 0 || credits - item.credits >= 0) {
-                                            let newdata = data.concat(item)
-                                            const arUnique = newdata.filter((a, i) => newdata.findIndex((s) => a.player_id === s.player_id) === i)
-                                            setplayerList([...arUnique])
-                                            playerSelectedcheck(index)
-                                            setplayercount(playercount + 1)
-                                            setAllroundercount(Allroundercount + 1)
-                                            item.team_name == team2 ? setteam2count(team2count + 1) : setteam1count(team1count + 1)
-                                            setcredits(credits - item.credits)
-                                        } else {
-                                            Alert.alert("You do not have sufficient credit points")
-                                        }
-
-
-
-                                    } else {
-                                        Alert.alert("Team Full")
-
-                                    }
-                                }
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-
+        // tempTeam.push(item)
+        // const player = playersdata.filter((x) => value.includes(x.id));
+        setTeam(prevState =>{
+            console.log('prevState', prevState)
+            const _team = [...prevState , item]
+            return _team
+        })
+        console.log('final', team)
     }
 
     const playerSelectedcheck = (index) => {

@@ -26,7 +26,7 @@ const Dashboard = (props) => {
     const [matchdata, setmatchdata] = useState([])
     const [loadingDashScreen, setLoadingDashScreen] = useState(false)
 
-const [seriesData,setSeriesData]= useState(null);
+const [seriesData,setSeriesData]= useState([]);
 
 
 const getSeriesName = (data , key)=>{
@@ -68,11 +68,11 @@ const getSeriesName = (data , key)=>{
             
             getMatches().then((res)=>{
             const _data = res.data.data
-            console.log('runnn',_data)
-            const filterData = _data.filter((match)=>match.teamInfo && match.matchEnded === false && match.matchStarted ===false  )
+            console.log('raw data _data',_data)
+            const filterData = _data.filter((match)=>match.teamInfo && match.matchStarted ===false  )
             console.log('filterData',filterData)
             
-            const data = filterData.map((match)=>{
+            const data = _data.map((match)=>{
                 return  {
                     match_id: match.id,
                     status: match.status,
@@ -84,7 +84,7 @@ const getSeriesName = (data , key)=>{
                     team2: match.teamInfo[1].img,
                 }
             })
-            console.log('runnn',data)
+            console.log('data after map',data)
 
             setmatchdata(data)
             
@@ -189,7 +189,7 @@ const getSeriesName = (data , key)=>{
                                         showsHorizontalScrollIndicator={false}
                                         renderItem={({ item }) => {
                                             return (
-                                                <TouchableOpacity onPress={() => props.navigation.navigate('Contestselection', { team1_name: item.team1_name, team2_name: item.team2_name, time_left: item.time_left, team1_img: item.team1, team2_img: item.team2 })} activeOpacity={0.7} style={{ flexDirection: 'row', justifyContent: 'space-between', width: scale(300), alignItems: 'center', alignSelf: 'center', marginHorizontal: scale(10), paddingHorizontal: scale(20), backgroundColor: colors.white, borderRadius: verticalScale(12), height: verticalScale(90) }}>
+                                                <TouchableOpacity onPress={() => props.navigation.navigate('Playerselection', { team1_name: item.team1_name, team2_name: item.team2_name, time_left: item.time_left, team1_img: item.team1, team2_img: item.team2 })} activeOpacity={0.7} style={{ flexDirection: 'row', justifyContent: 'space-between', width: scale(300), alignItems: 'center', alignSelf: 'center', marginHorizontal: scale(10), paddingHorizontal: scale(20), backgroundColor: colors.white, borderRadius: verticalScale(12), height: verticalScale(90) }}>
                                                     <View style={{ justifyContent: "center", alignItems: "center" }}>
                                                         <Image source={{ uri: item.team1 }} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
                                                         <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>{item.team1_name && item.team1_name}</Text>
@@ -231,7 +231,7 @@ const getSeriesName = (data , key)=>{
                                         showsVerticalScrollIndicator={false}
                                         renderItem={({ item }) => {
                                             return (
-                                                <TouchableOpacity onPress={() => props.navigation.navigate('Contestselection', { team1_name: item.team1_name, team2_name: item.team2_name, time_left: item.time_left, team1_img: item.team1, team2_img: item.team2 })} activeOpacity={0.7} style={{ flexDirection: 'row', justifyContent: 'space-between', width: scale(340), alignItems: 'center', alignSelf: 'center', marginVertical: verticalScale(10), paddingHorizontal: scale(20), backgroundColor: colors.white, borderRadius: verticalScale(12), height: verticalScale(90) }}>
+                                                <TouchableOpacity onPress={() => props.navigation.navigate('Playerselection', { team1_name: item.team1_name, team2_name: item.team2_name, time_left: item.time_left, team1_img: item.team1, team2_img: item.team2 })} activeOpacity={0.7} style={{ flexDirection: 'row', justifyContent: 'space-between', width: scale(340), alignItems: 'center', alignSelf: 'center', marginVertical: verticalScale(10), paddingHorizontal: scale(20), backgroundColor: colors.white, borderRadius: verticalScale(12), height: verticalScale(90) }}>
                                                     <View style={{ justifyContent: "center", alignItems: "center" }}>
                                                         <Image source={{ uri: item.team1 }} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
                                                         <Text style={{ color: colors.black, width: scale(70), textAlign: "center" }}>
