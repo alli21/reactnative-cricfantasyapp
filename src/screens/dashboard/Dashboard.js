@@ -9,9 +9,9 @@ import { bannercarouseldata } from '../../utils/Data';
 import { useSelector } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import Loader from '../../components/Loader';
-import { getScore, getSeries } from '../../api consumption/restApi';
+import { getPslMatches, getScore, getSeries } from '../../api consumption/restApi';
 import { getMatches } from '../../api consumption/restApi';
-
+import { pslTeams } from '../../utils/Data';
 const Dashboard = (props) => {
     const theme = useSelector(state => state.theme)
 
@@ -28,7 +28,28 @@ const Dashboard = (props) => {
 
 const [seriesData,setSeriesData]= useState([]);
 
-
+const getTimeRemaining = (date)=>{
+    const targetDate = new Date(date);
+    // console.log(targetDate)
+  
+    const currentDate = new Date();
+  
+    const timeDifference = targetDate - currentDate;
+  
+  
+    if (timeDifference > 0) {
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        // const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+  
+        // Display the time remaining
+        return `Starts in ${days} D, ${hours} H, ${minutes} M `;
+    } else {
+        console.log('The target date has already passed.');
+    }
+    
+  }
 const getSeriesName = (data , key)=>{
     console.log('id = ',data.map((x)=>x.id))
     console.log('key = ',key)
@@ -45,55 +66,72 @@ const getSeriesName = (data , key)=>{
     //     })
 
     // }
+    const getTeamData = (teams , id)=>{
+        return teams.find(team => team.id === id)
+      }
+    
 
-    useEffect(()=>{
-        getSeries().then((res)=>{
-
-            const _data1 = res.data.data;
-            console.log('series',_data1);
-
-            setSeriesData(_data1)
-           
-        }).catch((err)=>console.log(err))
-
-
-    },[])
 
     useEffect(() => {
       
+        setLoadingDashScreen(true)
+getPslMatches().then((res)=>{
+    const _data2 = res.data.data;
+    const pslMatches = _data2.filter((x)=>x.league_id===8)
+    const matches = pslMatches.map(match =>{
+        return   {
+            match_id: match.id,
+            status: match.status ,
+            time_left: match.status==='NS'? getTimeRemaining(match.starting_at):'Live',
+            tournament: 'PSL',
+            team1_name: getTeamData(pslTeams, match.localteam_id).code ,
+            team2_name: getTeamData(pslTeams, match.visitorteam_id).code,
+            team1: getTeamData(pslTeams, match.localteam_id).image_path,
+            team2: getTeamData(pslTeams, match.visitorteam_id).image_path,
+        }
+      })
+      
+    setmatchdata(matches)  
+      
+      
+      
+      
+})
+.catch((err)=>console.log(err))
+.finally(()=>{
+    setLoadingDashScreen(false)
+})
         
 
-        if (seriesData){
+            
+        //     getMatches().then((res)=>{
+        //     const _data = res.data.data
+        //     console.log('raw data _data',_data)
+        //     const filterData = _data.filter((match)=>match.teamInfo && match.matchStarted ===false  )
+        //     console.log('filterData',filterData)
+            
+        //     const data = _data.map((match)=>{
+        //         return  {
+        //             match_id: match.id,
+        //             status: match.status,
+        //             time_left: match.dateTimeGMT,
+        //             tournament: getSeriesName(seriesData , match.id).name,
+        //             team1_name: match.teamInfo[0].shortname,
+        //             team2_name: match.teamInfo[1].shortname,
+        //             team1: match.teamInfo[0].img,
+        //             team2: match.teamInfo[1].img,
+        //         }
+        //     })
+        //     console.log('data after map',data)
 
+        //     setmatchdata(data)
             
-            getMatches().then((res)=>{
-            const _data = res.data.data
-            console.log('raw data _data',_data)
-            const filterData = _data.filter((match)=>match.teamInfo && match.matchStarted ===false  )
-            console.log('filterData',filterData)
-            
-            const data = _data.map((match)=>{
-                return  {
-                    match_id: match.id,
-                    status: match.status,
-                    time_left: match.dateTimeGMT,
-                    tournament: getSeriesName(seriesData , match.id).name,
-                    team1_name: match.teamInfo[0].shortname,
-                    team2_name: match.teamInfo[1].shortname,
-                    team1: match.teamInfo[0].img,
-                    team2: match.teamInfo[1].img,
-                }
-            })
-            console.log('data after map',data)
-
-            setmatchdata(data)
-            
-        })
-        .catch((err)=>console.log(err))
-    }
+        // })
+      
+    
         
   
-    }, [seriesData])
+    }, [])
 
     return (
         <View style={{ flex: 1, backgroundColor: colors.white }}>
@@ -101,7 +139,7 @@ const getSeriesName = (data , key)=>{
             <StatusBar barStyle={"light-content"} backgroundColor={'transparent'} hidden={false} translucent={true}
             />
 
-            {/* <Loader loading={loadingDashScreen} /> */}
+             <Loader loading={loadingDashScreen} /> 
             <View
               
                 style={{

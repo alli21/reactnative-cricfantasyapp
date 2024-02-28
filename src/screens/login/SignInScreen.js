@@ -33,13 +33,14 @@ const SignInScreen = (props) => {
                         underlineColor={'#CBD7EF'}
                         selectionColor={colors.primary_blue}
                         activeUnderlineColor={colors.primary_blue}
-                        label="Mobile No."
+                        // label="Mobile No"
                         style={{ height: verticalScale(60), width: scale(340), marginHorizontal: verticalScale(5), alignSelf: 'center', color: colors.black, marginTop: verticalScale(20) }}
                         keyboardType="number-pad"
                         autoCapitalize='none'
                         onChangeText={(text) => handlePhoneChange(text)}
                         value={phoneNumber}
-                        maxLength={10}
+                        defaultValue='03445905678'
+                        maxLength={11}
                     />
                     <TextInput
                         mode="flat"
@@ -47,11 +48,12 @@ const SignInScreen = (props) => {
                         underlineColor={'#CBD7EF'}
                         selectionColor={colors.primary_blue}
                         activeUnderlineColor={colors.primary_blue}
-                        label="Password"
+                        // label="Password"
                         style={{ height: verticalScale(60), width: scale(340), marginHorizontal: verticalScale(5), alignSelf: 'center', color: colors.black, }}
                         keyboardType='default'
                         onChangeText={(text) => handlenameChange(text)}
                         value={name}
+                        defaultValue='aainjutttour'
                         maxLength={15}
                         secureTextEntry={true}
                     />

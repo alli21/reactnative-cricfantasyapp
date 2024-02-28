@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useNavigation } from '@react-navigation/native';
-import { getMatches } from '../../api consumption/restApi';
+import { getMatches, getScore } from '../../api consumption/restApi';
 
 
 const MyContest = (props) => {
@@ -27,7 +27,7 @@ const MyContest = (props) => {
     const [upcomingMatchData , setUpcomingMatchData] =useState([])
     const [liveMatchData, setLiveMatchData]=useState([])
     const [matchdata, setMatchdata] = useState([])
-
+const [scoreData,setScoreData]=useState([]);
     const navigation = useNavigation()
     console.log('ddddddddddddddd',props)
  
@@ -47,7 +47,13 @@ const MyContest = (props) => {
         });
       };
       
-      
+      useEffect(()=>{
+        getScore().then((res)=>{
+            const _data2= res.data.data;
+            setScoreData(_data2)
+            console.log('Score data', _data2)
+        })
+      },[])
     
       useEffect(() => {
          getMatches()
@@ -185,6 +191,11 @@ const MyContest = (props) => {
                                     data={completedMatchData}
                                     showsVerticalScrollIndicator={false}
                                     renderItem={({ item }) => {
+                                        console.log('Match ID in completedMatchData:', item.match_id);
+
+          // Filter scoreData based on match_id
+        //   const matchScores = scoreData.filter((score) => score.match_id === item.match_id);
+        //   console.log('Match Scores:', matchScores);
                                         console.log('item',item)
                                         return (
                                             <TouchableOpacity activeOpacity={0.7} style={{ flexDirection: 'row', justifyContent: 'space-between', width: scale(340), alignItems: 'center', alignSelf: 'center', marginVertical: verticalScale(10), paddingHorizontal: scale(20), backgroundColor: colors.white, borderRadius: verticalScale(12), height: verticalScale(90) }}>
@@ -203,6 +214,11 @@ const MyContest = (props) => {
                                                     <Text style={{ color: colors.black, fontFamily: constants.OPENSANS_FONT_BOLD }}>
                                                         V/S
                                                     </Text>
+                                            
+                                                        <Text style={{ color: colors.primary_red }}>
+                                                          Score: 145/8
+                                                        </Text>
+                                                    
                                                 </View>
                                                 <View style={{ justifyContent: "center", alignItems: "center" }}>
                                                     <Image source={{ uri: item.team2 }} style={{ height: verticalScale(40), width: verticalScale(40), borderRadius: verticalScale(40), borderWidth: 1, borderColor: 'black' }} />
